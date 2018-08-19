@@ -25,16 +25,14 @@ Things you may want to cover:
 
 ## usersテーブル
 
-|Column     |Type    |Options                        |
-|-----------|--------|-------------------------------|
-|id         |integer |null: false, primary key: true |
-|name       |string  |null: false, unique: true      |
-|email      |text    |null: false, unique: true      |
-|password   |text    |null: false                    |
-|created_at |date    |null: false                    |
-|updated_at |date    |null: false                    |
+|Column     |Type    |Options                              |
+|-----------|--------|-------------------------------------|
+|name       |string  |null: false, unique: true, add_index |
+|email      |text    |null: false, unique: true            |
+|password   |text    |null: false                          |
 
 ### Assosiation
+- has_many :groups, through: :groups
 - has_many :users_groups
 - has_many :messages
 
@@ -42,11 +40,8 @@ Things you may want to cover:
 
 |Column     |Type    |Options                        |
 |-----------|--------|-------------------------------|
-|id         |integer |null: false, primary key: true |
 |user_id    |integer |null: false, foreign_key: true |
 |group_id   |integer |null: false, foreign_key: true |
-|created_at |date    |null: false                    |
-|updated_at |date    |null: false                    |
 
 ### Assosiation
 - belongs_to :group
@@ -54,29 +49,24 @@ Things you may want to cover:
 
 ## groupsテーブル
 
-|Column     |Type    |Options                        |
-|-----------|--------|-------------------------------|
-|id         |integer |null: false, primary key: true |
-|group_name |string  |null: false, unique: true      |
-|created_at |date    |null: false                    |
-|updated_at |date    |null: false                    |
-
+|Column     |Type    |Options                              |
+|-----------|--------|-------------------------------------|
+|group_name |string  |null: false, unique: true, add_index |
 
 ### Assosiation
+- has_many :users, through: :users_groups
 - has_many :users_groups
 - has_many :messages
+- accepts_nested_attributes_for :users_groups
 
 ## messagesテーブル
 
 |Column     |Type    |Options                        |
 |-----------|--------|-------------------------------|
-|id         |integer |null: false, primary key: true |
 |user_id    |integer |null: false, foreign_key: true |
 |group_id   |integer |null: false, foreign_key: true |
 |body       |text    |　　　　　　　　　　　　　　　　　　 |
 |image      |text    |　　　　　　　　　　　　　　　　　　 |
-|created_at |date    |null: false                    |
-|updated_at |date    |null: false                    |
 
 ### Assosiation
 - belongs_to :user
