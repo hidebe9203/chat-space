@@ -32,8 +32,8 @@ Things you may want to cover:
 |password   |text    |null: false                          |
 
 ### Assosiation
-- has_many :groups, through: :groups
 - has_many :users_groups
+- has_many :groups, through: :users_groups
 - has_many :messages
 
 ## users_groupsテーブル
@@ -54,10 +54,9 @@ Things you may want to cover:
 |group_name |string  |null: false, unique: true, add_index |
 
 ### Assosiation
-- has_many :users, through: :users_groups
 - has_many :users_groups
+- has_many :users, through: :users_groups
 - has_many :messages
-- accepts_nested_attributes_for :users_groups
 
 ## messagesテーブル
 
