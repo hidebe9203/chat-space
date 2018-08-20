@@ -23,13 +23,50 @@ Things you may want to cover:
 
 * ...
 
-## membersテーブル
+## usersテーブル
 
-|Column|Type|Options|
-|------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|Column     |Type    |Options                              |
+|-----------|--------|-------------------------------------|
+|name       |string  |null: false, unique: true, add_index |
+|email      |text    |null: false, unique: true            |
+|password   |text    |null: false                          |
+
+### Assosiation
+- has_many :users_groups
+- has_many :groups, through: :users_groups
+- has_many :messages
+
+## users_groupsテーブル
+
+|Column     |Type       |Options                        |
+|-----------|-----------|-------------------------------|
+|user_id    |references |null: false, foreign_key: true |
+|group_id   |references |null: false, foreign_key: true |
 
 ### Assosiation
 - belongs_to :group
 - belongs_to :user
+
+## groupsテーブル
+
+|Column     |Type   |Options                   |
+|-----------|-------|--------------------------|
+|name       |string |null: false, unique: true |
+
+### Assosiation
+- has_many :users_groups
+- has_many :users, through: :users_groups
+- has_many :messages
+
+## messagesテーブル
+
+|Column     |Type       |Options                        |
+|-----------|-----------|-------------------------------|
+|user_id    |references |null: false, foreign_key: true |
+|group_id   |references |null: false, foreign_key: true |
+|body       |text       |　　　　　　　　　　　　　　　　　　 |
+|image      |text       |　　　　　　　　　　　　　　　　　　 |
+
+### Assosiation
+- belongs_to :user
+- belongs_to :group
