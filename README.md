@@ -38,10 +38,10 @@ Things you may want to cover:
 
 ## users_groupsテーブル
 
-|Column     |Type      |Options                        |
-|-----------|----------|-------------------------------|
-|user       |reference |null: false, foreign_key: true |
-|group      |reference |null: false, foreign_key: true |
+|Column     |Type       |Options                        |
+|-----------|-----------|-------------------------------|
+|user_id    |references |null: false, foreign_key: true |
+|group_id   |references |null: false, foreign_key: true |
 
 ### Assosiation
 - belongs_to :group
@@ -60,12 +60,12 @@ Things you may want to cover:
 
 ## messagesテーブル
 
-|Column     |Type      |Options                        |
-|-----------|----------|-------------------------------|
-|user       |reference |null: false, foreign_key: true |
-|group      |reference |null: false, foreign_key: true |
-|body       |text      |　　　　　　　　　　　　　　　　　　 |
-|image      |text      |　　　　　　　　　　　　　　　　　　 |
+|Column     |Type       |Options                        |
+|-----------|-----------|-------------------------------|
+|user_id    |references |null: false, foreign_key: true |
+|group_id   |references |null: false, foreign_key: true |
+|body       |text       |　　　　　　　　　　　　　　　　　　 |
+|image      |text       |　　　　　　　　　　　　　　　　　　 |
 
 ### Assosiation
 - belongs_to :user
