@@ -1,3 +1,5 @@
+.pop-up
+  %p.pop-up__message チャットグループが作成されました
 .palette
   .palette__user
     %p Hori
@@ -14,3 +16,42 @@
       %h2 Group
       .palette__group__message
         %p まだメッセージはありません
+.main
+  .main-header
+    .main-header__group
+      .main-header__group__name
+        %h2 Group
+      .main-header__group__member
+        %p まだメンバーはいません
+    =link_to "#", class: "main-header__edit" do
+      %p Edit
+  .main-contents
+    .main-contents__content
+      .main-contents__content__title
+        %h2
+          Hori
+          %span 2018/08/21 12:00
+      .main-contents__content__body
+        %p sample
+    .main-contents__content
+      .main-contents__content__title
+        %h2
+          Hori
+          %span 2018/08/21 12:00
+      .main-contents__content__body
+        %p sample
+    .main-contents__content
+      .main-contents__content__title
+        %h2
+          Hori
+          %span 2018/08/21 12:00
+      .main-contents__content__body
+        %p sample
+  .main-footer
+    =form_tag "#" do
+      %input{type: "text", placeholder: "type a message", class: "main-footer__input-box"}
+      .main-footer__image-icon
+        %label.upload-label{for: "upload-icon"}
+          %i.fa.fa-picture-o
+          %input{type: "file", id: "upload-icon"}
+      %input.main-footer__send-button{type: "submit", value: "Send"}
