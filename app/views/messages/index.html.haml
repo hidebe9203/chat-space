@@ -17,41 +17,41 @@
       .palette__group__message
         %p まだメッセージはありません
 .main
-  .main-header
-    .main-header__group
-      .main-header__group__name
+  .main__header
+    .main__header__group
+      .main__header__group__name
         %h2 Group
-      .main-header__group__member
+      .main__header__group__member
         %p まだメンバーはいません
-    =link_to "#", class: "main-header__edit" do
+    =link_to "#", class: "main__header__edit" do
       %p Edit
-  .main-contents
-    .main-contents__content
-      .main-contents__content__title
+  .main__contents
+    .main__contents__content
+      .main__contents__content__title
         %h2
           Hori
           %span 2018/08/21 12:00
-      .main-contents__content__body
+      .main__contents__content__body
         %p sample
-    .main-contents__content
-      .main-contents__content__title
+    .main__contents__content
+      .main__contents__content__title
         %h2
           Hori
           %span 2018/08/21 12:00
-      .main-contents__content__body
+      .main__contents__content__body
         %p sample
-    .main-contents__content
-      .main-contents__content__title
+    .main__contents__content
+      .main__contents__content__title
         %h2
           Hori
           %span 2018/08/21 12:00
-      .main-contents__content__body
+      .main__contents__content__body
         %p sample
-  .main-footer
+  .main__footer
     =form_tag "#" do
-      %input{type: "text", placeholder: "type a message", class: "main-footer__input-box"}
-      .main-footer__image-icon
+      %input{type: "text", placeholder: "type a message", class: "main__footer__input-box"}
+      .main__footer__image-icon
         %label.upload-label{for: "upload-icon"}
           %i.fa.fa-picture-o
           %input{type: "file", id: "upload-icon"}
-      %input.main-footer__send-button{type: "submit", value: "Send"}
+      %input.main__footer__send-button{type: "submit", value: "Send"}
