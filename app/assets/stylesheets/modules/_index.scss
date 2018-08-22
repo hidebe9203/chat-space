@@ -22,7 +22,7 @@ div {
   }
 }
 
-.palette {
+.side-bar {
   background-color: #2f3e51;
   width: 300px;
   height: 100%;
@@ -57,7 +57,7 @@ div {
   }
   &__group {
     padding: 0 20px 0;
-    .palette__group__name {
+    &__name {
       color: $white;
       font-size: 15px;
       text-decoration: none;

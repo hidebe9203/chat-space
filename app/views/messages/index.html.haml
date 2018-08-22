@@ -1,13 +1,13 @@
 .pop-up
   %p.pop-up__message チャットグループが作成されました
-.palette
-  .palette__user
+.side-bar
+  .side-bar__user
     %p Hori
-    =link_to "#", class: "palette__user__icon-cog" do
+    =link_to "#", class: "side-bar__user__icon-cog" do
       =fa_icon "cog"
-    =link_to "#", class: "palette__user__icon-edit" do
+    =link_to "#", class: "side-bar__user__icon-edit" do
       =fa_icon "edit"
-  .palette__group
+  .side-bar__group
     =render "group"
 .main
   .main__header
