@@ -3,10 +3,10 @@
 .palette
   .palette__user
     %p Hori
-    =link_to "#" do
-      %i.fa.fa-cog
-    =link_to "#" do
-      %i.fa.fa-edit
+    =link_to "#", class: "palette__user__icon-cog" do
+      =fa_icon "cog"
+    =link_to "#", class: "palette__user__icon-edit" do
+      =fa_icon "edit"
   .palette__group
     =render "group"
 .main
@@ -25,6 +25,6 @@
       %input{type: "text", placeholder: "type a message", class: "main__footer__input-box"}
       .main__footer__image-icon
         %label.upload-label{for: "upload-icon"}
-          %i.fa.fa-picture-o
+          =fa_icon "picture-o"
           %input{type: "file", id: "upload-icon"}
       %input.main__footer__send-button{type: "submit", value: "Send"}
