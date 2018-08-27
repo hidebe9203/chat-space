@@ -1,21 +1,9 @@
-.main__contents__content
-  .main__contents__content__title
-    %h2
-      Hori
-      %span 2018/08/21 12:00
-  .main__contents__content__body
-    %p sample
-.main__contents__content
-  .main__contents__content__title
-    %h2
-      Hori
-      %span 2018/08/21 12:00
-  .main__contents__content__body
-    %p sample
-.main__contents__content
-  .main__contents__content__title
-    %h2
-      Hori
-      %span 2018/08/21 12:00
-  .main__contents__content__body
-    %p sample
+- @messages.each do |message|
+  .main__contents__content
+    .main__contents__content__title
+      %h2
+        = message.user.name
+        %span= message.created_at
+    .main__contents__content__body
+      %p= message.content
+      = image_tag message.image.to_s

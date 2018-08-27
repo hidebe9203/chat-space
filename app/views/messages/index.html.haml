@@ -1,19 +1,26 @@
+= render 'shared/side_bar'
 .main
   .main__header
     .main__header__group
       .main__header__group__name
-        %h2 Group
+        %h2= @group.name
       .main__header__group__member
-        %p まだメンバーはいません
-    =link_to "#", class: "main__header__edit" do
+      - if @group.users
+        %p.main__header__group__member__title
+          Member :
+          - @group.users.each do |user|
+            %span= user.name
+      - else
+        %p メンバーがいません
+    =link_to edit_group_path(@group), class: "main__header__edit" do
       %p Edit
   .main__contents
-    =render "message", item: @groups
+    =render "message", item: @messages
   .main__footer
-    =form_tag "#" do
-      %input{type: "text", placeholder: "type a message", class: "main__footer__input-box"}
+    = form_for @message, :url => { :controller => :messages, :action => :create } do |f|
+      = f.text_field :content, class: "main__footer__input-box", placeholder: "type a message"
       .main__footer__image-icon
-        %label.upload-label{for: "upload-icon"}
-          =fa_icon "picture-o"
-          %input{type: "file", id: "upload-icon"}
-      %input.main__footer__send-button{type: "submit", value: "Send"}
+        = f.label :image, class: "upload-label" do
+          = fa_icon 'picture-o'
+          = f.file_field :image, class: 'hidden'
+      = f.submit "Send", class: "main__footer__send-button"

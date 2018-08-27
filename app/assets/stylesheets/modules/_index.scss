@@ -16,10 +16,12 @@
         color: #333333;
         padding-top: 35px;
       }
-      &__member {
-        font-size: 12px;
-        color: #999999;
-        padding-top: 15px;
+      &__member{
+        &__title {
+          font-size: 12px;
+          color: #999999;
+          padding-top: 15px;
+        }
       }
     }
     &__edit {
@@ -39,6 +41,8 @@
     }
   }
   &__contents {
+    overflow: scroll;
+    height: calc(100% - 191px );
     &__content {
       padding: 0 40px 0;
       margin-top: 46px;
@@ -88,7 +92,7 @@
       .upload-label {
         line-height: 50px;
       }
-      #upload-icon {
+      .hidden {
         display: none;
       }
     }
