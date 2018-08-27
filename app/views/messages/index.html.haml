@@ -1,11 +1,18 @@
+= render 'shared/side_bar'
 .main
   .main__header
     .main__header__group
       .main__header__group__name
-        %h2 Group
+        %h2= @group.name
       .main__header__group__member
-        %p まだメンバーはいません
-    =link_to "#", class: "main__header__edit" do
+      - if @group.users
+        %p.main__header__group__member__title
+          Member :
+          - @group.users.each do |user|
+            %span= user.name
+      - else
+        %p メンバーがいません
+    =link_to edit_group_path(@group), class: "main__header__edit" do
       %p Edit
   .main__contents
     =render "message", item: @groups

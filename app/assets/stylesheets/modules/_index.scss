@@ -16,10 +16,12 @@
         color: #333333;
         padding-top: 35px;
       }
-      &__member {
-        font-size: 12px;
-        color: #999999;
-        padding-top: 15px;
+      &__member{
+        &__title {
+          font-size: 12px;
+          color: #999999;
+          padding-top: 15px;
+        }
       }
     }
     &__edit {
