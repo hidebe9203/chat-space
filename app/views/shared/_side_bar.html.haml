@@ -11,4 +11,4 @@
       =link_to group_messages_path(group), class: "side-bar__group__name" do
         %h2=group.name
         .side-bar__group__message
-          %p まだメッセージはありません
+          %p= group.show_last_message
