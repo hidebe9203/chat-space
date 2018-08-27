@@ -8,7 +8,7 @@
       =fa_icon "edit"
   .side-bar__group
     - current_user.groups.each do |group|
-      =link_to "#", class: "side-bar__group__name" do
+      =link_to group_messages_path(group), class: "side-bar__group__name" do
         %h2=group.name
         .side-bar__group__message
           %p まだメッセージはありません
