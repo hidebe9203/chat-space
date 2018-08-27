@@ -15,7 +15,7 @@
     =link_to edit_group_path(@group), class: "main__header__edit" do
       %p Edit
   .main__contents
-    =render "message", item: @groups
+    =render "message", item: @messages
   .main__footer
     = form_for @message, :url => { :controller => :messages, :action => :create } do |f|
       = f.text_field :content, class: "main__footer__input-box", placeholder: "type a message"
