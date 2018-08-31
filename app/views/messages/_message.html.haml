@@ -1,9 +1,8 @@
 - @messages.each do |message|
   .main__contents__content
     .main__contents__content__title
-      %h2
-        = message.user.name
-        %span= message.created_at.strftime("%Y/%m/%d %H:%M")
+      = message.user.name
+      %span= message.created_at.strftime("%Y/%m/%d %H:%M")
     .main__contents__content__body
       %p= message.content
       = image_tag message.image.to_s
