@@ -1,8 +1,8 @@
-FactoryGirl.define do
+ FactoryBot.define do
   factory :user do
-    password = Faker::Internet.password(8)
-    name Faker::Name.last_name
-    email Faker::Internet.free_email
+    password = 12345678
+    name "yamada"
+    email "a@a.com"
     password password
     password_confirmation password
   end

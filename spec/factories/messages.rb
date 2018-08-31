@@ -1,6 +1,6 @@
-FactoryGirl.define do
+ FactoryBot.define do
   factory :message do
-    content Faker::Lorem.sentence
+    content "test"
     image File.open("#{Rails.root}/public/images/no_image.jpg")
     user
     group
