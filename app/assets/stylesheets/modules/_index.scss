@@ -49,14 +49,12 @@
       margin-bottom: 40px;
       &__title {
         margin-bottom: 10px;
-        h2 {
-          font-size: 16px;
-          color: $gray;
-          font-weight: bold;
-          span {
-            font-size: 12px;
-            color: #999999;
-          }
+        font-size: 16px;
+        color: $gray;
+        font-weight: bold;
+        span {
+          font-size: 12px;
+          color: #999999;
         }
       }
       &__body {
