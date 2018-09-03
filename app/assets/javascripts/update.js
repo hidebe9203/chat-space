@@ -3,9 +3,9 @@ $(window).on('load', function(e) {
 
     var message_list = $('.main__contents');
 
-    function appendMessage(message) {
+    function buildHTML(message) {
       var imageUrl = (message.image_url !== null) ? `<img src=${ message.image_url } >` : '';
-      var html = `<div class="main__contents__content">
+      var html = `<div class="main__contents__content" data-message-id=${ message.id }>
                     <div class="main__contents__content__title">
                       ${ message.user_name }
                       <span>
@@ -19,7 +19,7 @@ $(window).on('load', function(e) {
                       ${ imageUrl }
                     </div>
                   </div>`
-      message_list.append(html)
+      return html;
     }
 
     e.preventDefault();
@@ -32,10 +32,16 @@ $(window).on('load', function(e) {
         dataType: 'json'
       })
       .done(function(messages) {
-        $('.main__contents').empty();
+        var id = $('.main__contents__content').filter(":last").data('messageId');
+        var insertHTML ='';
         messages.forEach(function(message) {
-          appendMessage(message);
+          if(message.id > id) {
+            insertHTML += buildHTML(message);
+            $('.main__contents').append(insertHTML);
+            console.log("更新完了")
+          }
         })
+        console.log("最新レコード検索中…")
       })
       .fail(function() {
         alert('error')

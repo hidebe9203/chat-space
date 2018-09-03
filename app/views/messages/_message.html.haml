@@ -1,5 +1,5 @@
 - @messages.each do |message|
-  .main__contents__content
+  .main__contents__content{ "data-message-id": "#{message.id}" }
     .main__contents__content__title
       = message.user.name
       %span= message.created_at.strftime("%Y/%m/%d %H:%M")

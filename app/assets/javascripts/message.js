@@ -1,14 +1,14 @@
 $(function() {
 
-  function buildHTML(comment) {
-    var imageUrl = (comment.image_url !== null) ? `<img src=${ comment.image_url } >` : '';
-    var html = `<div class="main__contents__content">
+  function buildHTML(message) {
+    var imageUrl = (message.image_url !== null) ? `<img src=${ message.image_url } >` : '';
+    var html = `<div class="main__contents__content" data-message-id=${ message.id }>
                   <div class="main__contents__content__title">
-                    ${ comment.user_name }
-                    <span>${ comment.created_at }</span>
+                    ${ message.user_name }
+                    <span>${ message.created_at }</span>
                   </div>
                   <div class="main__contents__content__body">
-                    <p>${ comment.content }<p>
+                    <p>${ message.content }<p>
                     ${ imageUrl }
                   </div>
                 </div>`
