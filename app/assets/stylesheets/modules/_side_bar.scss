@@ -49,6 +49,8 @@ div {
     }
   }
   &__group {
+    overflow: scroll;
+    height: calc(100% - 100px );
     padding: 0 20px 0;
     &__name {
       color: $white;
