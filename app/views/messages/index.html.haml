@@ -18,7 +18,8 @@
     =render "message", item: @messages
   .main__footer
     = form_for @message, :url => { :controller => :messages, :action => :create } do |f|
-      = f.text_field :content, class: "main__footer__input-box", placeholder: "type a message"
+      .main__footer__input-box
+        = f.text_field :content, placeholder: "type a message"
       .main__footer__image-icon
         = f.label :image, class: "upload-label" do
           = fa_icon 'picture-o'
