@@ -30,7 +30,7 @@ $(function() {
     .done(function(message) {
       var html = buildHTML(message);
       $('.main__contents').append(html)
-      $('.main__footer__input-box').val('');
+      $('.main__footer__input-box input').val('');
       $('.hidden').val('');
       $('.main__contents').animate({scrollTop: $('.main__contents')[0].scrollHeight}, 'fast');
     })
