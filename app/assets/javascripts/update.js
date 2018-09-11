@@ -38,6 +38,7 @@ $(window).on('load', function(e) {
           if(message.id > id) {
             insertHTML += buildHTML(message);
             $('.main__contents').append(insertHTML);
+            $('.main__contents').animate({scrollTop: $('.main__contents')[0].scrollHeight}, 'fast');
             console.log("更新完了")
           }
         })
